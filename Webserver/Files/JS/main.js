@@ -1,6 +1,6 @@
 console.info("[JS] Js loaded !");
 
-document.body.style.backgroundColor = "rgb(0, 255, 240)"
+document.body.style.backgroundColor = "rgb(3, 232, 252)"
 
 let button = document.getElementById("main_pagebtn");
 let cropbox = document.getElementById("cropbox");

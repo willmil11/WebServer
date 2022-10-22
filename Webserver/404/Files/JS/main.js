@@ -7,7 +7,7 @@ let cropbox = document.getElementById("cropbox");
 
 cropbox.style.backgroundColor = "white";
 cropbox.style.borderRadius = "15%"
-cropbox.style.width = "300px";
+cropbox.style.width = "400px";
 
 button.style.backgroundColor = "black";
 button.style.color = "white";
@@ -22,5 +22,5 @@ button.style.background.color = "black";
 }
 
 button.onclick = function(){
-window.location.href = "/";
+    location.reload();
 }

@@ -1,0 +1,26 @@
+{
+  "name": "webserver",
+  "version": "1.1.0",
+  "description": "A cool webserver used to serve files",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willmil11/WebServer.git"
+  },
+  "keywords": [
+    "Webserver",
+    "Node.js"
+  ],
+  "author": "willmil11",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willmil11/WebServer/issues"
+  },
+  "homepage": "https://github.com/willmil11/WebServer#readme",
+  "bin": {
+    "webserver": "./app.js"
+  }
+}

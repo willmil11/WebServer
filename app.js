@@ -2,7 +2,7 @@
 
 //Webserver
 //
-//Webserver by willmil11 (1.1.0)
+//Webserver by willmil11 (2.0.0)
 //Post isues on github
 //My discord: willmil11#8988
 //My github: willmil11
@@ -128,6 +128,7 @@ try {
         console.log("[Webserver/" + log.processid + "] Getting ip...");
         log.detail.ip = req.headers['x-forwarded-for']?.split(',').shift() || req.socket?.remoteAddress
         console.log("[Webserver/" + log.processid + "] Ip recieved (" + log.detail.ip + ")");
+        console.log("[Webserver/" + log.processid + "] Requested url: '" + log.detail.url + "'");
         if ((req.method === "GET")) {
             console.log("[Webserver/" + log.processid + "] Getting file type...");
         var filetype = req.url.split(".");
@@ -396,7 +397,4 @@ catch (error){
     catch(error){
         console.log("[Webserver/Error] Unable to log the error to a new log file...");
         console.log("[Webserver/Error] Stack trace: " + error);
-    }
-}
-//
-//
+    }}

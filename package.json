@@ -1,5 +1,5 @@
 {
-  "name": "webserver",
+  "name": "@willmil11/webserver",
   "version": "2.0.0",
   "description": "Webserver is a node.js based webserver",
   "main": "app.js",
@@ -19,7 +19,13 @@
     "web",
     "server",
     "http",
-    "justworks"
+    "justworks",
+    "webserver_",
+    "node",
+    "nodejs",
+    "Node.js",
+    "web-server",
+    "simple-webserver"
   ],
   "author": "willmil11",
   "license": "ISC",

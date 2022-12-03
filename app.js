@@ -25,7 +25,7 @@ var port = args[1];
 //Get path from args
 var path = args[0];
 
-console.log("[Webserver] Started webserver...");
+console.log("[Webserver] Started Webserver...");
 
 function savelog(IsError, log){
     var date = (Date().slice(4, -42));
@@ -36,49 +36,49 @@ function savelog(IsError, log){
     var loop = true;
     while (loop === true){
         if (IsError){
-            if (fs.existsSync("/home/webserver/")){
-                if (fs.existsSync("/home/webserver/Log/")){
-                    if (fs.existsSync("/home/webserver/Log/Error/")){
-                        fs.closeSync(fs.openSync(("/home/webserver/Log/Error/" + date + ".json"), 'w'));
-                        fs.writeFileSync(("/home/webserver/Log/Error/" + date + ".json"), `${JSON.stringify(log)}`, "utf8");
+            if (fs.existsSync("/home/Webserver/")){
+                if (fs.existsSync("/home/Webserver/Log/")){
+                    if (fs.existsSync("/home/Webserver/Log/Error/")){
+                        fs.closeSync(fs.openSync(("/home/Webserver/Log/Error/" + date + ".json"), 'w'));
+                        fs.writeFileSync(("/home/Webserver/Log/Error/" + date + ".json"), `${JSON.stringify(log)}`, "utf8");
                         loop = false;
                     }
                     else{
-                        fs.mkdirSync("/home/webserver/Log/Error/");
-                        fs.closeSync(fs.openSync(("/home/webserver/Log/Error/" + date + ".json"), 'w'));
-                        fs.writeFileSync(("/home/webserver/Log/Error/" + date + ".json"), `${(JSON.stringify(log))}`, 'utf8');
+                        fs.mkdirSync("/home/Webserver/Log/Error/");
+                        fs.closeSync(fs.openSync(("/home/Webserver/Log/Error/" + date + ".json"), 'w'));
+                        fs.writeFileSync(("/home/Webserver/Log/Error/" + date + ".json"), `${(JSON.stringify(log))}`, 'utf8');
                         loop = false;
                     }
                 }
                 else{
-                    fs.mkdirSync("/home/webserver/Log/");
+                    fs.mkdirSync("/home/Webserver/Log/");
                 }
             }
             else{
-                fs.mkdirSync("/home/webserver/");
+                fs.mkdirSync("/home/Webserver/");
             }
         }
         else{
-            if (fs.existsSync("/home/webserver/")){
-                if (fs.existsSync("/home/webserver/Log/")){
-                    if (fs.existsSync("/home/webserver/Log/Request/")){
-                        fs.closeSync(fs.openSync(("/home/webserver/Log/Request/" + date + ".json"), 'w'));
-                        fs.writeFileSync(("/home/webserver/Log/Request/" + date + ".json"), `${JSON.stringify(log)}`, "utf8");
+            if (fs.existsSync("/home/Webserver/")){
+                if (fs.existsSync("/home/Webserver/Log/")){
+                    if (fs.existsSync("/home/Webserver/Log/Request/")){
+                        fs.closeSync(fs.openSync(("/home/Webserver/Log/Request/" + date + ".json"), 'w'));
+                        fs.writeFileSync(("/home/Webserver/Log/Request/" + date + ".json"), `${JSON.stringify(log)}`, "utf8");
                         loop = false;
                     }
                     else{
-                        fs.mkdirSync("/home/webserver/Log/Request/");
-                        fs.closeSync(fs.openSync(("/home/webserver/Log/Request/" + date + ".json"), 'w'));
-                        fs.writeFileSync(("/home/webserver/Log/Request/" + date + ".json"), `${(JSON.stringify(log))}`, 'utf8');
+                        fs.mkdirSync("/home/Webserver/Log/Request/");
+                        fs.closeSync(fs.openSync(("/home/Webserver/Log/Request/" + date + ".json"), 'w'));
+                        fs.writeFileSync(("/home/Webserver/Log/Request/" + date + ".json"), `${(JSON.stringify(log))}`, 'utf8');
                         loop = false;
                     }
                 }
                 else{
-                    fs.mkdirSync("/home/webserver/Log/");
+                    fs.mkdirSync("/home/Webserver/Log/");
                 }
             }
             else{
-                fs.mkdirSync("/home/webserver/");
+                fs.mkdirSync("/home/Webserver/");
             }
         }
     }
@@ -218,7 +218,7 @@ try {
             console.log("[Webserver/" + log.processid + "/Sucess] ");
             try{
                 savelog(false, log);
-                console.log("[Webserver/" + log.processid + "/Sucess] Log file saved to " + ("/home/webserver/logs/Sucess"));
+                console.log("[Webserver/" + log.processid + "/Sucess] Log file saved to " + ("/home/Webserver/logs/Sucess"));
             }
             catch (error){
                 console.log("[Webserver/" + log.processid + "/Sucess] Error while saving log file");
@@ -259,7 +259,7 @@ try {
                 console.log("[Webserver/" + log.processid + "/Error] ");
                 try{
                     savelog(true, log);
-                    console.log("[Webserver/" + log.processid + "/Error] Log file saved to " + ("/home/webserver/logs/Error"));
+                    console.log("[Webserver/" + log.processid + "/Error] Log file saved to " + ("/home/Webserver/logs/Error"));
                 }
                 catch (error){
                     console.log("[Webserver/" + log.processid + "/Error] Error while saving log file");
@@ -295,7 +295,7 @@ try {
                 console.log("[Webserver/" + log.processid + "/Error] ");
                 try{
                     savelog(true, log);
-                    console.log("[Webserver/" + log.processid + "/Error] Log file saved to " + ("/home/webserver/logs/Error"));
+                    console.log("[Webserver/" + log.processid + "/Error] Log file saved to " + ("/home/Webserver/logs/Error"));
                 }
                 catch (error){
                     console.log("[Webserver/" + log.processid + "/Error] Error while saving log file");
@@ -325,7 +325,7 @@ try {
             console.log("[Webserver/" + log.processid + "/Error] ");
             try{
                 savelog(true, log);
-                console.log("[Webserver/" + log.processid + "/Error] Error log saved to " + ("/home/webserver/Log/Error/"));
+                console.log("[Webserver/" + log.processid + "/Error] Error log saved to " + ("/home/Webserver/Log/Error/"));
             }
             catch (error){
                 console.log("[Webserver/" + log.processid + "/Error] Unable to log the request to a new log file...");
@@ -392,7 +392,7 @@ catch (error){
     //Save error to error.log
     try{
         savelog(true, log);
-        console.log("[Webserver/Error] Error log saved to " + ("/home/webserver/Log/Error/"));
+        console.log("[Webserver/Error] Error log saved to " + ("/home/Webserver/Log/Error/"));
     }
     catch(error){
         console.log("[Webserver/Error] Unable to log the error to a new log file...");

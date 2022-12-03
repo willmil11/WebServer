@@ -12,7 +12,14 @@
   },
   "keywords": [
     "Webserver",
-    "Node.js"
+    "Node.js",
+    "webserver",
+    "npm",
+    "simple",
+    "web",
+    "server",
+    "http",
+    "justworks"
   ],
   "author": "willmil11",
   "license": "ISC",

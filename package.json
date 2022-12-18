@@ -1,6 +1,6 @@
 {
   "name": "@willmil11/webserver",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Webserver is a node.js based webserver",
   "main": "app.js",
   "scripts": {

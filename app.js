@@ -127,6 +127,7 @@ try {
         console.log("[Webserver/" + log.processid + "] Process id generated");
         console.log("[Webserver/" + log.processid + "] Getting ip...");
         log.detail.ip = req.headers['x-forwarded-for']?.split(',').shift() || req.socket?.remoteAddress
+        log.detail.ip = log.detail.ip.slice(7);
         console.log("[Webserver/" + log.processid + "] Ip recieved (" + log.detail.ip + ")");
         console.log("[Webserver/" + log.processid + "] Requested url: '" + log.detail.url + "'");
         if ((req.method === "GET")) {
@@ -136,7 +137,7 @@ try {
         console.log("[Webserver/" + log.processid + "] File type recieved (" + log.detail.filetype + ")");
         console.log("[Webserver/" + log.processid + "] Getting file...");
         try {
-            if (log.detail.url === "/"){
+            if (log.detail.url === "/" || log.detail.url == "/" || req.url === "/" || req.url == "/"){
                 log.detail.url = "/index.html";
                 log.detail.filetype = "html";
                 console.log("[Webserver/" + log.processid + "] Real file type: " + log.detail.filetype);

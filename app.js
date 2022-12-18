@@ -139,6 +139,8 @@ try {
             if (log.detail.url === "/"){
                 log.detail.url = "/index.html";
                 log.detail.filetype = "html";
+                console.log("[Webserver/" + log.processid + "] Real file type: " + log.detail.filetype);
+                console.log("[Webserver/" + log.processid + "] Real file: " + log.detail.url);
             }
             var file = fs.readFileSync((path + log.detail.url), "utf8");
             console.log("[Webserver/" + log.processid + "] File recieved");
